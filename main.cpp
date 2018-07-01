@@ -28,7 +28,10 @@ int main(int argc,char **argv){
         }
         if(Objet.Active[0]){
             if((F.cliqueG || F.cliqueD)){
-                if((Objet.tabpositionMin[0].x<=F.sourieMouve.x && F.sourieMouve.x<=Objet.tabpositionMax[0].x) && (Objet.tabpositionMin[0].y<=F.sourieMouve.y && F.sourieMouve.y<=Objet.tabpositionMin[0].y+15)){
+                if((Objet.tabpositionMax[0].x-15<=F.sourieMouve.x && F.sourieMouve.x<=Objet.tabpositionMax[0].x) && (Objet.tabpositionMin[0].y<=F.sourieMouve.y && F.sourieMouve.y<=Objet.tabpositionMin[0].y+15)){
+                    Objet.Active[0]=false;
+                }
+                else if((Objet.tabpositionMin[0].x<=F.sourieMouve.x && F.sourieMouve.x<=Objet.tabpositionMax[0].x) && (Objet.tabpositionMin[0].y<=F.sourieMouve.y && F.sourieMouve.y<=Objet.tabpositionMin[0].y+15)){
                     mouveObjet=true;
                 }
             }
@@ -47,4 +50,3 @@ int main(int argc,char **argv){
     }
     return 1;
 }
-
