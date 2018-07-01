@@ -23,8 +23,11 @@ int main(int argc,char **argv){
         if(M.Indice(F.sourieClick)==0 && (F.cliqueG || F.cliqueD)){
             if(Objet.Active[0])
                 Objet.Active[0]=false;
-            else
+            else{
                 Objet.Active[0]=true;
+                SDL_Rect pos;pos.x=40;pos.y=40;
+                Objet.positionMouve(0,pos);
+            }
         }
         if(Objet.Active[0]){
             if((F.cliqueG || F.cliqueD)){
